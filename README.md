@@ -32,58 +32,6 @@ We have installation walkthroughs based on different development  platforms.
 [Linux  Installation Instructions for Development] [li]
 [li]: http://zurmo.org/wiki/linux-installation-instructions-for-development
 
-Production
-Hardware
-RAM: 256(Minimum), >= 512M (Recommended)
-Disk: >= 500M
-Software
-Apache >= 2.2.1 Or IIS >= 5.0.0 (Zurmo should work on other webservers, IE cherokee, as we have not used any webserver specific modules. Be aware though, we have not tested Zurmo extensively on other webservers)
-Apache mod_deflate (Optional, recommended for good traffic deployments)
-Memcached (Optional, recommended for good traffic deployments)
-MySQL Server >= 5.1
-Either root access credentials shall be known or a new database and user credential pair should be created for zurmo
-Settings:
-character-set-server=utf8
-collation-server=utf8_unicode_ci (Not utf8_general_ci)
-default-storage-engine=INNODB
-max_sp_recursion_depth=20 (Recommend value: 100)
-max_allowed_packet = 20M (Optional)
-thread_stack = 512K
-optimizer-search-depth = 0
-log_bin = 0 (this is the default setting, in most cases you will not need to modify it)
-Database should not be running in strict mode
-PHP >= 5.3.3
-Settings
-date.timezone must be set
-memory_limit >= 128M (Minimum), >=256M (Recommended)
-file_uploads should be on
-upload_max_filesize >= 20M (Optional. You can adjust this to higher value depending on your needs)
-post_max_size >= 20M (Optional. You can adjust this to higher value depending on your needs)
-max_execution_time >= 300
-set_include_path should be enabled
-$_SERVER should be accessible
-Extensions
-pcre
-spl
-ctype
-apc >= 1.0.0 (Optional, recommended for good traffic deployments)
-soap
-curl >= 6.0
-mbstring
-memcache >= 2.2.0 (php5-memcache, not php5-memcached)
-imap (Optional)
-pdo
-pdo_mysql
-zip (Optional)
-gd (Optional)
-Paths
-The following paths should be writable by the webserver process:
-app/protected/config/debug.php (may not exist)
-app/version.php
-app/protected/config/perInstance.php
-app/assets/
-app/protected/data/
-app/protected/runtime/
 
  
 For support please visit and register for our [forum] [fp] pages.
